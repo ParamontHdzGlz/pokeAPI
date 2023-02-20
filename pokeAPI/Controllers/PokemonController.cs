@@ -6,7 +6,7 @@ namespace pokeAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class PokemonController: ControllerBase
+    public class PokemonController : ControllerBase
     {
 
 
@@ -23,6 +23,13 @@ namespace pokeAPI.Controllers
         public ActionResult<IEnumerable<PokemonEntity>> GetAllPokemon()
         {
             return Ok(_pokemonRepository.GetAllPokemons());
+        }
+
+        [HttpGet("{id}", Name = "GetPokemon")]
+        public ActionResult<IEnumerable<PokemonEntity>> GetPokemon(int id)
+        {
+            //return Ok(_pokemonRepository.GetPokemon());
+            throw new NotImplementedException();
         }
     }
 }
